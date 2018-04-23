@@ -9,20 +9,25 @@ import { Usuario } from '../model/usuario';
 })
 export class ListarComponent implements OnInit {
 
-  usuarios: Array<Usuario>
+  usuarios = []
 
   constructor(private usuarioServicio: UsuarioService) { }
 
   ngOnInit() {
     this.getUsuarios();
+    
   }
 
-  getUsuarios(): void {
+  getUsuarios() {
     this.usuarioServicio.getUsuarios()
       .subscribe(usuarios => {
         this.usuarios = usuarios;
-        console.log(usuarios);
+        console.log(
+          this.usuarios
+
+        )
       });
+
   }
 
 

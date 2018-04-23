@@ -29,11 +29,11 @@ namespace api.Controllers
 
         // GET: api/Usuarios
         [HttpGet]
-        public IEnumerable<UsuarioDto> GetUsuario()
+        public ActionResult GetUsuario()
         {
             var usuarios = _context.Usuario;
             var usuariosDtos = _mapper.Map<IList<UsuarioDto>>(usuarios);
-            return usuariosDtos;
+            return Ok(usuariosDtos);
         }
 
         // GET: api/Usuarios/5

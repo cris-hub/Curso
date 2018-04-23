@@ -7,7 +7,7 @@ import { IndexComponent } from './index/index.component';
 const usuariosRoutes: Routes = [
   {
   path: '',
-  component: IndexComponent,
+    component: ListarComponent,
   children: [
     {
       path: '',

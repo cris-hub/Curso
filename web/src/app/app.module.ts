@@ -6,12 +6,13 @@ import { UsuarioModule } from './usuario/usuario.module';
 import { Router } from '@angular/router';
 import { HomeModule } from './home/home.module';
 import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './not-found.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
-
+    AppComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
