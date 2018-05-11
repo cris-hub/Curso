@@ -9,5 +9,5 @@
  */
 angular.module('webApp')
   .controller('ContactCtrl', function () {
-  var vm = this;
+  //var vm = this;
   });

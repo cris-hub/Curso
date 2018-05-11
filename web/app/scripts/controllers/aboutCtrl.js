@@ -2,12 +2,15 @@
 
 /**
  * @ngdoc function
- * @name webApp.controller:MainCtrl
+ * @name webApp.controller:AboutCtrl
  * @description
- * # MainCtrl
+ * # AboutCtrl
  * Controller of the webApp
  */
 angular.module('webApp')
-  .controller('MainCtrl', function () {
-  var vm = this;
+  .controller('AboutCtrl', function () {
+ 	//var vm = this;
+ 	
+
+
   });
