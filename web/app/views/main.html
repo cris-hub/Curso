@@ -5,6 +5,6 @@ ng-class="vm.generarClases()"
  type="submit" ng-disabled="!vm.usuario.nombre"  value="guardar">
 </form>
 
-<div ng-repeat="usuario in vm.usuarios ">
-  {{usuario.nombre}}
+<div ng-repeat="($index,usuario) in vm.usuarios ">
+  {{usuario.id}}---- {{usuario.nombre}} <button ng-click="vm.delete(usuario.id)">eliminar</button>
 </div>

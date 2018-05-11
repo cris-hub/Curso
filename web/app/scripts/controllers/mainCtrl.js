@@ -17,18 +17,27 @@ angular.module('webApp')
     	
     	nombre : '',
     };
+
+
     //logica
 
     vm.add = function(){
     	var valido = vm.usuarioValido(vm.usuario);
     	if (valido) {
-    	vm.usuarios.push(vm.usuario);
+		UsuarioSvc.add(vm.usuario).then(function (response) {
+			vm.usuarios.push(response.data);	
+		});
+
     	return;
     	}
-
     	console.log('vacio');
     	
     };
+
+	vm.delete = function(id) {
+	console.log(id);
+	UsuarioSvc.userDelete(id).then(console.log('se elimino'));
+	};
 
 	UsuarioSvc.get().then(function (response) {
 		vm.usuarios = response.data;
