@@ -51,7 +51,7 @@ namespace model
 
               .Build();
 
-            builder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=curso;Trusted_Connection=True;");
+            builder.UseSqlServer("Server=DESKTOP-M3UD78L\\SQLEXPRESS;Database=curso;Trusted_Connection=True;");
             return new DataContext(builder.Options);
         }
     }
