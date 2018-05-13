@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2010
+VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "model", "model\model.csproj", "{3E3267AF-80F3-4F6A-9000-2AC50E113ED1}"
 EndProject
@@ -28,7 +28,9 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "web", "web\", "{833FAAD6-BB
 		SlnRelativePath = "web\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelView", "ModelView\ModelView.csproj", "{594020CC-F88D-4CA1-BF0B-44B553E06FB7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelView", "ModelView\ModelView.csproj", "{594020CC-F88D-4CA1-BF0B-44B553E06FB7}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{7618325C-471F-4890-A552-25193AF7D2A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{594020CC-F88D-4CA1-BF0B-44B553E06FB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{594020CC-F88D-4CA1-BF0B-44B553E06FB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{594020CC-F88D-4CA1-BF0B-44B553E06FB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7618325C-471F-4890-A552-25193AF7D2A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7618325C-471F-4890-A552-25193AF7D2A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7618325C-471F-4890-A552-25193AF7D2A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7618325C-471F-4890-A552-25193AF7D2A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
