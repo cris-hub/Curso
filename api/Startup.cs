@@ -54,7 +54,6 @@ namespace api
 
 
             app.UseMvc();
-
             // ********************
             // USE CORS - might not be required.
             // ********************

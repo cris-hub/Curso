@@ -1,10 +1,58 @@
 <form ng-submit="vm.add()" >
-<input type="text" ng-model="vm.usuario.nombre ">
+
+
+<div id="lista" class="form-group">
+    <label for="nombre">Nombre</label>
+    <input ng-model="vm.usuario.nombre " type="text" class="form-control" id="nombre" aria-describedby="helpnombre" placeholder="Ingresa tu nombre">
+
+
+    <small id="helpnombre" class="form-text text-muted">Nombre persona</small>
+  </div>
+
 <input class="btn" 
 ng-class="vm.generarClases()"
  type="submit" ng-disabled="!vm.usuario.nombre"  value="guardar">
 </form>
 
-<div ng-repeat="($index,usuario) in vm.usuarios ">
-  {{usuario.id}}---- {{usuario.nombre}} <button ng-click="vm.delete(usuario.id)">eliminar</button>
+<div>
+ 
+<ul  ng-repeat="($index,usuario) in vm.usuarios " class="list-group">
+  <li class="list-group-item"> {{::usuario.id}}  {{::usuario.nombre}}  
+	<button ng-click="vm.delete(usuario.id)">eliminar</button>
+<button ng-click="vm.editar(usuario.id)" type="button" class="btn btn-primary" 
+
+
+data-toggle="modal" data-target="#exampleModal"
+
+>
+  Launch demo modal
+</button>
+  </li>
+
+</ul>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+      	<input ng-model="vm.usuarioEditar.nombre " type="text" class="form-control" id="nombre" aria-describedby="helpnombre" placeholder="Ingresa tu nombre">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button ng-click="vm.update()" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 </div>
