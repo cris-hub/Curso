@@ -13,8 +13,12 @@ angular
 
     var urlApi = 'http://localhost:58242/';
 
-    service.get = function () {
+    service.getAll = function () {
       return $http.get(urlApi + 'api/usuarios');
+    };
+
+    service.getById = function(id) {
+      return $http.get(urlApi + 'api/usuarios/' + id);
     };
 
     service.add = function (usuario) {
@@ -32,7 +36,8 @@ angular
     return {
       userDelete: userDelete,
       add: service.add,
-      get: service.get,
+      getAll: service.getAll,
+      getById: service.getById,
       update: update
     };
   }]);

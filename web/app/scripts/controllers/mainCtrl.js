@@ -8,7 +8,7 @@
  * Controller of the webApp
  */
 angular.module('webApp')
-  .controller('MainCtrl', ['UsuarioSvc', '$location', function (UsuarioSvc, $location) {
+  .controller('MainCtrl', ['UsuarioSvc', '$location', '$routeParams', function (UsuarioSvc, $location, $routeParams) {
 
     //
     var vm = this;
@@ -35,16 +35,26 @@ angular.module('webApp')
 
     };
 
-    vm.delete = function (id) {
-      console.log(id);
-      UsuarioSvc.userDelete(id).then(function () {
+    
 
+    vm.delete = function (id) {
+      UsuarioSvc.userDelete(id).then(function () {
         $location.path('#');
       });
 
     };
 
-    UsuarioSvc.get().then(function (response) {
+    if ($routeParams.id) {
+      UsuarioSvc.getById($routeParams.id).then(function (response) {
+        vm.usuario = response.data;
+      });
+
+    } 
+
+    
+
+
+    UsuarioSvc.getAll().then(function (response) {
       vm.usuarios = response.data;
     });
 
@@ -57,10 +67,8 @@ angular.module('webApp')
     };
 
     vm.update = function () {
-      
-     
       UsuarioSvc.update(vm.usuarioEditar).then(function (response) {
-        
+        $location.path('/');
       });
     };
 

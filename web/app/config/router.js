@@ -2,11 +2,16 @@
 
 angular
   .module('webApp')
-  .config(['$routeProvider','$locationProvider',function ($routeProvider,$locationProvider) {
+  .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
+        controller: 'MainCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/:id', {
+        templateUrl: 'views/editar.html',
         controller: 'MainCtrl',
         controllerAs: 'vm'
       })
