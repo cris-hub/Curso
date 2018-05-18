@@ -1,8 +1,32 @@
-<div>
-  <span data-ng-repeat="(key, usuario) in vm.usuario">
-    <strong>{{key | uppercase}}:</strong> {{usuario}} <br>
 
+<form ng-submit="vm.update()">
+  <div>
+    <span data-ng-repeat="(key, usuario) in vm.usuarioEditar ">
+      <strong>{{key}}:</strong> {{::usuario}} <br>
+    </span>
 
-  </span>
-  <a ng-href="/">Volver</a>
+    <div class="row">
+      <div class="col-md-8">
+        <div id="lista" class="form-group">
+          <input ng-model="vm.usuarioEditar.nombre " type="text" class="form-control" id="nombre" aria-describedby="helpnombre" placeholder="Ingresa nuevo nombre">
+        </div>
+      </div>
+      <div class="col-md-4">
+
+        <input ng-class="vm.generarClases()" type="submit" class="btn" ng-disabled="!vm.usuarioEditar.nombre" value="Editar">
+      </div>
+
+    </div>
+
+    <a ng-href="#/usuarios">Volver</a>
   </div>
+</form>
+
+
+<form ng-submit="vm.copiar()">
+  <input ng-model="vm.a" type="text" class="form-control" id="nombre" aria-describedby="helpnombre" placeholder="Ingresa nuevo nombre">
+  <input ng-model="vm.b" type="text" class="form-control" id="nombre" aria-describedby="helpnombre" placeholder="Ingresa nuevo nombre">
+
+  <input type="submit" class="btn"  value="copiar">
+
+</form>

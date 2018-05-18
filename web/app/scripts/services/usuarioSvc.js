@@ -1,9 +1,10 @@
 'use strict';
 angular
   .module('webApp')
-  .factory('UsuarioSvc', ['$http', function ($http) {
-
-    var config = {
+  .factory('UsuarioSvc', ['$http', '$q',function ($http,$q) {
+    var defered = $q.defer();
+    var promise = defered.promise;
+    const config = {
       headers: {
         'Content-Type': 'application/json'
       }
@@ -13,8 +14,16 @@ angular
 
     var urlApi = 'http://localhost:58242/';
 
-    service.getAll = function () {
-      return $http.get(urlApi + 'api/usuarios');
+    service.getAll =  () => {
+       $http.get(urlApi + 'api/usuarios')
+        .then((response) => {
+          defered.resolve(response);
+        },
+        (error) => {
+          defered.reject(error);
+        });
+
+       return promise;
     };
 
     service.getById = function(id) {

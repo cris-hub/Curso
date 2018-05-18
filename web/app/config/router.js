@@ -3,16 +3,22 @@
 angular
   .module('webApp')
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
+    $locationProvider.hashPrefix('');
+
     $routeProvider
       .when('/', {
         templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
+        controller: 'UsuarioCtrl',
         controllerAs: 'vm'
       })
-      .when('/:id', {
+      .when('/usuarios', {
+        templateUrl: 'views/usuarios.html',
+        controller: 'UsuarioCtrl',
+        controllerAs: 'vm'
+      })
+      .when('/usuario/:id/editar', {
         templateUrl: 'views/editar.html',
-        controller: 'MainCtrl',
+        controller: 'UsuarioCtrl',
         controllerAs: 'vm'
       })
       .when('/about', {
@@ -28,4 +34,5 @@ angular
       .otherwise({
         redirectTo: '/'
       });
+    
   }]);

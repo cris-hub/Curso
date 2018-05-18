@@ -4,7 +4,7 @@ using System.Text;
 
 namespace model.entities
 {
-    class Replica
+    public   class Replica
     {
     }
 }

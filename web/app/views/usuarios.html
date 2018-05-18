@@ -1,0 +1,40 @@
+<form ng-submit="vm.add()">
+  <label for="nombre">Nombre</label>
+  <div class="row">
+    <div class="col-md-8">
+      <div id="lista" class="form-group">
+        <input ng-model="vm.usuario.nombre " type="text" class="form-control" id="nombre" aria-describedby="helpnombre" placeholder="Ingresa tu nombre">
+      </div>
+    </div>
+    <div class="col-md-4">
+      <input ng-class="vm.generarClases()" type="submit" class="btn" ng-disabled="!vm.usuario.nombre" value="guardar">
+    </div>
+  </div>
+
+</form>
+
+
+<div>
+
+  <ul ng-repeat="($index,usuario) in vm.usuarios" class="list-group">
+    <li class="list-group-item">
+      <a ng-href="#/usuario/{{usuario.id}}">
+        {{usuario.id}}
+        {{usuario.nombre}}
+      </a>
+      <div class="pull-right">
+        <a ng-click="vm.delete(usuario.id)" class="btn btn-danger">eliminar</a>
+        <a ng-href="#/usuario/{{usuario.id}}/editar" class="btn btn-primary">
+          editar
+        </a>
+      </div>
+
+    </li>
+
+  </ul>
+
+
+
+
+
+</div>
